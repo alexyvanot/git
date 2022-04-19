@@ -97,7 +97,12 @@ function isPrimeNumber(num) {
 	return isPrime;
 }
 
-function isNull() {
+/**
+* isSumNull() will add all numbers and if it's equal to 0, that will return a
+* boolean with a console log.
+* @return boolean
+*/
+function isSumNull() {
 	let somme = 0;
 	let tab = [1, 2, 3, 4, -10];
 	let i;
