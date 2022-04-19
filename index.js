@@ -52,7 +52,7 @@ function square(type) {
 	let j = 0;
 	let size = readlineSync.question('Size: ')
 	size = Number(size);
-	if(type !== 'while' || type !== 'for') {
+	if(type !== 'while' && type !== 'for') {
 		if(type === undefined) {
 			throw "Function square() has to get a parameter (usage: 'for' or 'while') !";
 		}
@@ -143,11 +143,10 @@ function isSumNull() {
 	}
 }
 
-/*
-isNull();
+
+isSumNull();
 isPrimeNumber();
 crossPattern('for');
 crossPattern('while');
 square('for');
 square('while');
-*/
