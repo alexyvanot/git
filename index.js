@@ -1,12 +1,18 @@
 const readlineSync = require("readline-sync");
 
+/**
+* Function square() can draw a cross by asking to the user !
+* You have to choose which of for cycle or while cycle you want to use to draw.
+*
+* @return undefinded
+*/
 function crossPattern(type) {
 	let i = 0;
 	let j = 0;
-	let size = readlineSync.question('Taille: ')
+	let size = readlineSync.question('Size: ')
 	size = Number(size);
 	if(type === 'for') {
-		console.log('Affichage de la croix par la boucle FOR.');
+		console.log('Drawing the cross with the FOR cycle.');
 		for(i = 0; i <= size; i++) {
 			for(j = 0; j <= size; j++) {
 				if (i === j || i + j === size) {
@@ -18,7 +24,7 @@ function crossPattern(type) {
 			console.log("");
 		}
 	} else if(type === 'while') {
-		console.log('Affichage de la croix par la boucle WHILE.');
+		console.log('Drawing the cross with the WHILE cycle.');
 		while(i <= size) {
 			while(j <= size) {
 				if (i === j || i + j === size) {
@@ -35,13 +41,25 @@ function crossPattern(type) {
 	}
 }
 
+/**
+* Function square() can draw a cube by asking to the user !
+* You have to choose which of for cycle or while cycle you want to use to draw.
+*
+* @return undefinded
+*/
 function square(type) {
 	let i = 0;
 	let j = 0;
-	let size = readlineSync.question('Taille: ')
+	let size = readlineSync.question('Size: ')
 	size = Number(size);
+	if(type !== 'while' || type !== 'for') {
+		if(type === undefined) {
+			throw "Function square() has to get a parameter (usage: 'for' or 'while') !";
+		}
+		throw "Function square() has a wrong parameter ! (usage: 'for' or 'while')";
+	}
 	if(type === 'for') {
-		console.log('Affichage du carré vide par la boucle FOR.');
+		console.log('Drawing the unfilled square with the FOR cycle.');
 		for(i = 0; i <= size; i++) {
 			for(j = 0; j <= size; j++) {
 				if (j === 0 || i === 0 || j === size || i === size) {
@@ -53,7 +71,7 @@ function square(type) {
 			console.log("");
 		}
 	} else if(type === 'while') {
-		console.log('Affichage du carré vide par la boucle WHILE.');
+		console.log('Drawing the unfilled square with the WHILE cycle.');
 		while(i <= size) {
 			while(j <= size) {
 				if (j === 0 || i === 0 || j === size || i === size) {
@@ -70,16 +88,22 @@ function square(type) {
 	}
 }
 
+/**
+* isPrimeNumber() will return a boolean that shows to you if a number is prime.
+* This function is taking number as parameter. If there is no params, it will
+* ask the user to choose a number to check.
+*
+* @return boolean
+*/
 function isPrimeNumber(num) {
 	if(num === undefined) {
-		num = readlineSync.question('Choisir un nombre entier: ');
+		num = readlineSync.question('Choose a positive integer: ');
 		num = Number(num);
 	}
 	let isPrime = true;
 
 	if(num <= 1) {
-		console.log("Le nombre choisi doit être supérieur ou égal à un.");
-		return;
+		throw "Chosen number isn't greater than/equal to 1 !";
 	}
 
 	for(let i = 2; i <= num; i++) {
@@ -90,14 +114,20 @@ function isPrimeNumber(num) {
 	}
 
 	if(isPrime) {
-		console.log(num + " est premier.");
+		console.log(num + " is prime");
 	} else {
-		console.log(num + " n'est pas premier.");
+		console.log(num + " isn't prime");
 	}
 	return isPrime;
 }
 
-function isNull() {
+/**
+* isSumNull() will add all numbers and if it's equal to 0, that will return a
+* boolean.
+*
+* @return boolean
+*/
+function isSumNull() {
 	let somme = 0;
 	let tab = [1, 2, 3, 4, -10];
 	let i;
@@ -107,10 +137,8 @@ function isNull() {
 	}
 
 	if(somme === 0) {
-		console.log("lala");
 		return true;
 	} else {
-		console.log("loloooo");
 		return false;
 	}
 }
