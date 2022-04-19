@@ -54,9 +54,9 @@ function square(type) {
 	size = Number(size);
 	if(type !== 'while' && type !== 'for') {
 		if(type === undefined) {
-			throw "Function square() has to get a parameter (usage: 'for' or 'while') !";
+			throw new Error("Function square() has to get a parameter (usage: 'for' or 'while') !");
 		}
-		throw "Function square() has a wrong parameter ! (usage: 'for' or 'while')";
+		throw new Error("Function square() has a wrong parameter ! (usage: 'for' or 'while')");
 	}
 	if(type === 'for') {
 		console.log('Drawing the unfilled square with the FOR cycle.');
@@ -103,7 +103,7 @@ function isPrimeNumber(num) {
 	let isPrime = true;
 
 	if(num <= 1) {
-		throw "Chosen number isn't greater than/equal to 1 !";
+		throw new Error("Chosen number isn't greater than/equal to 1 !");
 	}
 
 	for(let i = 2; i <= num; i++) {
