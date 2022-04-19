@@ -144,9 +144,10 @@ function isSumNull() {
 }
 
 
-isSumNull();
+var resultOfSum = isSumNull();
 isPrimeNumber();
 crossPattern('for');
 crossPattern('while');
 square('for');
 square('while');
+console.log(resultOfSum);
