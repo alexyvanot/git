@@ -143,6 +143,15 @@ function isSumNull() {
 	}
 }
 
+/*
+* Unusefull function to do nothing and return nothing.
+*
+* @return null
+*/
+function unusedFunction() {
+	return null;
+}
+
 
 var resultOfSum = isSumNull();
 isPrimeNumber();
