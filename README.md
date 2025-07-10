@@ -1,4 +1,4 @@
-# git
+# Git Courses
 
 This repository is part of a coursework project focused on learning how to use Git and understanding good practices around version control.
 
